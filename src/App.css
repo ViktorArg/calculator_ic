@@ -1,8 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
 }
 
 .logo {
@@ -63,10 +61,125 @@
   }
 }
 
-.card {
-  padding: 2em;
+@media (prefers-reduced-motion: no-preference) {
+  .logo.vite {
+    animation: logo-swim 5s ease-in-out infinite;
+  }
 }
 
-.read-the-docs {
-  color: #888;
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+}
+
+.titles {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+.initialLetters{
+  color: darkslateblue;
+}
+
+.middleLetters{
+  color: darkmagenta;
+}
+
+.finalLetters{
+  color: aqua;
+}
+
+.versionLetters{
+  color:bisque;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: start;
+  justify-content: space-evenly;
+}
+
+.instructionsNotes{
+  color: antiquewhite;
+  font-size: medium;
+  margin: 2%;
+  margin-top: 0;
+}
+
+.warningMessage {
+  margin: 0 0 0 40px !important;
+  color: coral !important;
+}
+
+.container {
+  height: 100%;
+  width: 60%;
+  margin: 2%;
+  background-color: black;
+  border-radius: 1rem;
+  padding: 1rem;
+  -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.wrapper {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 10px;
+
+}
+
+.screen {
+  grid-column: 1 / -1;
+  color: white;
+  text-align: right;
+  padding-top: 20px;
+  font-size: 3rem;
+  overflow: hidden;
+}
+
+.btn {
+  display: grid;
+  place-content: center;
+  background-color: rgb(54, 52, 52);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: gray;
+}
+
+.light-gray {
+  background-color: gray;
+  color: black;
+}
+
+.light-gray:hover {
+  background-color: white;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.orange:hover {
+  background-color: white;
+  color: orange;
+}
+
+.zero {
+  grid-column: 1 / span 2;
+  border-radius: 25px;
+  place-content: unset;
+  align-items: center;
+  padding-left: 2rem;
 }

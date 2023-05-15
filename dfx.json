@@ -1,5 +1,5 @@
 {
-    "dfx": "0.13.1",
+    "dfx": "0.14.0",
     "defaults": {
         "build": {
             "packtool": "npm run --silent sources"
@@ -18,5 +18,6 @@
             },
             "source": ["dist/"]
         }
-    }
+    },
+    "output_env_file": ".env"
 }
