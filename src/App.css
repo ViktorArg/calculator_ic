@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 #root {
   max-width: 1280px;
+  background-image: url(./assets/cal.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .logo {
@@ -24,6 +27,15 @@
   }
 }
 
+@media only screen and (max-width: 767px) {
+  .logo {
+  display:none;
+  }
+  .container {
+    width: 100% !important;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .logo.react {
     animation: logo-spin infinite 60s linear;
@@ -32,6 +44,15 @@
 
 .logo.motoko:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+.logo.discord:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+  border-radius: 20%;
+}
+
+.logo.discord {
+  border-radius: 40%;
 }
 
 .logo-stack {
@@ -73,10 +94,11 @@ body {
 }
 
 .titles {
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-evenly;
+  text-align: center;
+}
+
+.greetingLetters{
+  color: darksalmon;
 }
 
 .initialLetters{
@@ -97,28 +119,37 @@ body {
 
 .itemsContainer {
   display: flex;
-  flex-direction: row-reverse;
-  align-items: start;
+  flex-direction: row;
   justify-content: space-evenly;
 }
 
+.imagesContainer {
+  width: 25%;
+}
+
 .instructionsNotes{
+  background-color: black;
+  opacity: 80%;
   color: antiquewhite;
   font-size: medium;
   margin: 2%;
   margin-top: 0;
+  padding: 2%;
+  border-radius: 5%;
 }
 
 .warningMessage {
-  margin: 0 0 0 40px !important;
-  color: coral !important;
+  margin: 0;
+  text-align: center;
+  color: red !important;
 }
+
 
 .container {
   height: 100%;
-  width: 60%;
-  margin: 2%;
+  width: 40%;
   background-color: black;
+  margin: 0;
   border-radius: 1rem;
   padding: 1rem;
   -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
