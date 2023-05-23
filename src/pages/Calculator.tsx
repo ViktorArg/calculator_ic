@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import '../App.css';
 import motokoLogo from '../assets/motoko_moving.png';
-import motokoShadowLogo from '../assets/motoko_shadow.png';
 import reactLogo from '../assets/react.svg';
 import discordLogo from '../assets/discord.jpg';
 import { backend } from '../declarations/backend';
+import { Icon } from '@mui/material';
+import BackspaceIcon from '@mui/icons-material/Backspace';
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
+import SuperscriptIcon from '@mui/icons-material/Superscript';
 
 function Calculator() {
   const [count, setCount] = useState<number>();
@@ -54,10 +58,11 @@ function Calculator() {
       return setWarningMessage(true);
     }
     setOperator(e);
+    await equals(e);
     setWarningMessage(false);
   };
 
-  const equals = async (e: any) => {
+  const equals = async (e: string) => {
     if(!operator){
       setWarningMessageText("You should input a number!");
       return setWarningMessage(true);
@@ -113,7 +118,11 @@ function Calculator() {
     }
     setLoading(false);
     setInput("");
-    setOperator("");
+    if(e !== ""){
+      setOperator(e);
+    } else {
+      setOperator("");
+    }
     setCanisterCall(!canisterCall);
   };
 
@@ -185,13 +194,15 @@ function Calculator() {
               </span>
               <span>
                 { firstInput !== "" && operator === "" ? firstInput :
-                    loading === true ? 
-                    loadingText
+                    loading === true ? <span>
+                      { `${loadingText} ` }
+                      <CloudDownloadIcon fontSize='large' />
+                    </span>
                     : 
                       operator === "√" ?
-                        `${operator} ${count && count.toFixed(0)}`
+                        `${operator} ${count && count.toLocaleString('de-DE', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 2})}`
                         :
-                        count && count.toFixed(0)
+                        count && count.toLocaleString('de-DE', { style: 'decimal', minimumFractionDigits: 0, maximumFractionDigits: 2})
                 }
               </span>
               <span>
@@ -253,9 +264,9 @@ function Calculator() {
               0
             </div>
             <div className='btn' onClick={()=>inputNum("<")}>
-              {"<-"}
+              <BackspaceIcon/>
             </div>
-            <div className='btn' onClick={equals}>
+            <div className='btn' onClick={()=>equals("")}>
               =
             </div>
           </div>
@@ -270,7 +281,7 @@ function Calculator() {
             </span>
           </a>
           <a
-            href="https://discordapp.com/channels/@me/Viktor19#9529/"
+            href="https://discordapp.com/users/Viktor19#9529/"
             target="_blank"
           >
             <span className="logo-stack">
