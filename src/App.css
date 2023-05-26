@@ -137,7 +137,6 @@ body {
   color: red !important;
 }
 
-
 .container {
   height: 100%;
   width: 40%;
@@ -178,6 +177,7 @@ body {
   cursor: pointer;
   font-weight: bold;
 }
+
 .btn:hover {
   background-color: gray;
 }
