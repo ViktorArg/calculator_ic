@@ -29,7 +29,7 @@
 
 @media only screen and (max-width: 767px) {
   .logo {
-  display:none;
+    display:none;
   }
   .container {
     width: 100% !important;
@@ -55,15 +55,6 @@
   border-radius: 40%;
 }
 
-.logo-stack {
-  display: inline-grid;
-}
-
-.logo-stack > * {
-  grid-column: 1;
-  grid-row: 1;
-}
-
 @keyframes logo-swim {
   from {
     transform: rotate(4deg) translateY(0);
@@ -80,10 +71,12 @@
   .logo.motoko {
     animation: logo-swim 5s ease-in-out infinite;
   }
-}
 
-@media (prefers-reduced-motion: no-preference) {
   .logo.vite {
+    animation: logo-swim 5s ease-in-out infinite;
+  }
+
+  .logo.discord {
     animation: logo-swim 5s ease-in-out infinite;
   }
 }
