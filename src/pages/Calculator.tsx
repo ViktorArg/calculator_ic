@@ -195,8 +195,8 @@ function Calculator() {
               <span>
                 { firstInput !== "" && operator === "" ? firstInput :
                     loading === true ? <span>
-                      { `${loadingText} ` }
                       <CloudDownloadIcon fontSize='large' />
+                      { ` ${loadingText} ` }
                     </span>
                     : 
                       operator === "√" ?
@@ -294,7 +294,7 @@ function Calculator() {
         <h2>Notes:</h2>
         <p>- This application is in the testing stage, in case of error please report it to the development team by clicking on the discord logo.</p>
         <p>- Takes a while to initialize after entering the first value and the operator.</p>
-        <p>- Once initialization is complete, you can input the other value to the operation and finally click on equal button (=) to optain the result.</p>
+        <p>- Once initialization is complete, you can input the other value to the operation and finally click on equal or other operator button to obtain the result.</p>
         <p>- Initializing, calculating and resetting stages may take about 2 seconds.</p>
       </div>
     </div>
